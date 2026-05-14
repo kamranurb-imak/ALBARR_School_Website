@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Al-Barr Secondary School Academics — O-Level, A-Level, and Cambridge curriculum details." />
+  <title>Academics | Al-Barr Secondary School</title>
+  <link rel="stylesheet" href="css/main.css" /><link rel="stylesheet" href="css/components.css" />
+  <style>
+    .academics-body { padding:var(--space-16) 0; }
+    .levels-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:32px; margin-top:48px; }
+    .level-card { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-xl); padding:40px; transition:all var(--transition); }
+    .level-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); border-color:var(--color-primary); }
+    .level-card.highlight { background:var(--color-primary); color:#fff; border-color:var(--color-primary); }
+    .level-card.highlight h3,.level-card.highlight .level-grades { color:#fff; }
+    .level-card.highlight p,.level-card.highlight li { color:rgba(255,255,255,.75); }
+    .level-icon { font-size:2.8rem; margin-bottom:20px; }
+    .level-grades { font-size:var(--text-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--color-secondary); margin-bottom:10px; }
+    .level-card h3 { font-size:var(--text-2xl); margin-bottom:12px; }
+    .level-card p { color:var(--color-text-muted); line-height:1.75; margin-bottom:16px; }
+    .subjects-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .subject-tag { background:rgba(27,58,107,.1); color:var(--color-primary); font-size:var(--text-xs); font-weight:600; padding:4px 12px; border-radius:var(--radius-full); }
+    .level-card.highlight .subject-tag { background:rgba(255,255,255,.15); color:#fff; }
+    .method-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
+    .method-item { text-align:center; padding:36px 28px; background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-xl); }
+    .method-icon { font-size:2.4rem; margin-bottom:16px; }
+    .method-item h4 { font-size:var(--text-lg); margin-bottom:10px; }
+    .method-item p { font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.65; }
+    .calendar-table { width:100%; border-collapse:collapse; margin-top:36px; }
+    .calendar-table th { background:var(--color-primary); color:#fff; padding:14px 20px; text-align:left; font-size:var(--text-sm); }
+    .calendar-table td { padding:14px 20px; border-bottom:1px solid var(--color-border); font-size:var(--text-sm); color:var(--color-text-muted); }
+    .calendar-table tr:last-child td { border-bottom:none; }
+    .calendar-table tr:hover td { background:var(--color-bg-alt); }
+    @media(max-width:900px){ .levels-grid,.method-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar solid" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">AB</div><div class="nav-logo-text"><strong>Al-Barr Secondary School</strong><span>Nurturing Minds, Building Futures</span></div></a>
+      <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html" class="active">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <div class="nav-right"><button class="theme-toggle" id="themeToggle" title="Toggle Dark / Light Mode">🌙</button><a href="admissions.html" class="btn btn-secondary btn-sm">Apply Now</a></div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-drawer" id="navDrawer"><a href="index.html">Home</a><a href="about.html">About</a><a href="academics.html" class="active">Academics</a><a href="admissions.html">Admissions</a><a href="news.html">News</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="admissions.html" class="btn btn-secondary">Apply Now</a></div>
+
+  <div class="page-hero"><div class="container"><h1>Academic Programmes</h1><p>Cambridge-aligned education from Primary to A-Level</p><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Academics</span></div></div></div>
+
+  <div class="academics-body">
+    <div class="container">
+      <div class="text-center fade-up"><div class="label">Classes &amp; Curriculum</div><h2 class="section-title">Education for Every Stage</h2><p class="section-sub">Our structured curriculum ensures seamless progression from foundational primary education through to Cambridge A-Level qualifications.</p></div>
+      <div class="levels-grid">
+        <div class="level-card fade-up"><div class="level-icon">📚</div><div class="level-grades">Classes I – V</div><h3>Primary Section</h3><p>Building strong foundations in literacy, numeracy, science, and the arts. Small class sizes ensure individual attention and a love for learning from the very beginning.</p><ul style="color:var(--color-text-muted);font-size:var(--text-sm);padding-left:20px;margin-bottom:16px;"><li style="margin-bottom:6px;">English Language &amp; Urdu</li><li style="margin-bottom:6px;">Mathematics</li><li style="margin-bottom:6px;">General Science &amp; Social Studies</li><li style="margin-bottom:6px;">Islamic Studies &amp; Arts</li></ul><a href="admissions.html" class="btn btn-outline btn-sm">Apply for Primary</a></div>
+        <div class="level-card fade-up"><div class="level-icon">🎒</div><div class="level-grades">Classes VI – VIII</div><h3>Middle School</h3><p>Deepening subject knowledge and developing independent study skills. Students explore biology, chemistry, and physics for the first time alongside advanced mathematics and language arts.</p><ul style="color:var(--color-text-muted);font-size:var(--text-sm);padding-left:20px;margin-bottom:16px;"><li style="margin-bottom:6px;">English, Urdu &amp; Pakistan Studies</li><li style="margin-bottom:6px;">Mathematics &amp; Computer Science</li><li style="margin-bottom:6px;">Biology, Chemistry &amp; Physics (intro)</li><li style="margin-bottom:6px;">Islamic Studies &amp; Social Studies</li></ul><a href="admissions.html" class="btn btn-outline btn-sm">Apply for Middle</a></div>
+        <div class="level-card highlight fade-up"><div class="level-icon">🏅</div><div class="level-grades">Classes IX – X · Cambridge IGCSE</div><h3>O-Level Programme</h3><p>Our flagship Cambridge IGCSE programme offers 20+ subjects with dedicated specialist teachers. Students consistently achieve outstanding results, with 94% passing all subjects in 2024.</p><div class="subjects-list"><span class="subject-tag">Mathematics</span><span class="subject-tag">English Language</span><span class="subject-tag">Physics</span><span class="subject-tag">Chemistry</span><span class="subject-tag">Biology</span><span class="subject-tag">Computer Science</span><span class="subject-tag">Urdu</span><span class="subject-tag">Pakistan Studies</span><span class="subject-tag">Islamiat</span><span class="subject-tag">Economics</span><span class="subject-tag">Business Studies</span></div><a href="admissions.html" class="btn btn-secondary btn-sm" style="margin-top:24px;">Apply for O-Level</a></div>
+        <div class="level-card fade-up"><div class="level-icon">🎓</div><div class="level-grades">Classes XI – XII · Cambridge AS &amp; A-Level</div><h3>A-Level Programme</h3><p>Rigorous Cambridge AS &amp; A-Level qualifications preparing students for top universities in Pakistan and abroad. Personalised subject combinations aligned with career aspirations and university requirements.</p><div class="subjects-list"><span class="subject-tag">Mathematics</span><span class="subject-tag">Physics</span><span class="subject-tag">Chemistry</span><span class="subject-tag">Biology</span><span class="subject-tag">Computer Science</span><span class="subject-tag">Economics</span><span class="subject-tag">English Literature</span><span class="subject-tag">Business</span><span class="subject-tag">Psychology</span></div><a href="admissions.html" class="btn btn-outline btn-sm" style="margin-top:24px;">Apply for A-Level</a></div>
+      </div>
+
+      <!-- Teaching Methodology -->
+      <div style="margin-top:var(--space-16);">
+        <div class="text-center fade-up"><div class="label">How We Teach</div><h2 class="section-title">Our Teaching Methodology</h2></div>
+        <div class="method-grid">
+          <div class="method-item fade-up"><div class="method-icon">🧠</div><h4>Inquiry-Based Learning</h4><p>We encourage students to ask questions, investigate problems, and arrive at understanding through guided exploration rather than rote memorisation.</p></div>
+          <div class="method-item fade-up"><div class="method-icon">🤝</div><h4>Collaborative Classrooms</h4><p>Group projects, debates, and peer teaching develop communication skills and build the teamwork abilities essential for university and career success.</p></div>
+          <div class="method-item fade-up"><div class="method-icon">🎯</div><h4>Targeted Exam Preparation</h4><p>Cambridge past-paper practice, mock examinations, and detailed feedback ensure every student enters the exam hall fully prepared and confident.</p></div>
+          <div class="method-item fade-up"><div class="method-icon">🔬</div><h4>Practical Science</h4><p>Regular hands-on laboratory sessions make abstract scientific concepts tangible and memorable, while building essential experimental skills.</p></div>
+          <div class="method-item fade-up"><div class="method-icon">💡</div><h4>Critical Thinking</h4><p>From essay writing to mathematical problem-solving, we train students to think analytically, evaluate evidence, and argue their positions clearly.</p></div>
+          <div class="method-item fade-up"><div class="method-icon">📊</div><h4>Data-Driven Progress</h4><p>Regular formative assessments and parent progress reports ensure every student's academic journey is monitored and supported proactively.</p></div>
+        </div>
+      </div>
+
+      <!-- Academic Calendar -->
+      <div style="margin-top:var(--space-16);">
+        <div class="text-center fade-up"><div class="label">Academic Year</div><h2 class="section-title">Calendar Highlights 2025–26</h2></div>
+        <div class="fade-up"><table class="calendar-table"><thead><tr><th>Term / Event</th><th>Dates</th><th>Notes</th></tr></thead><tbody>
+          <tr><td>Term 1 Begins</td><td>August 18, 2025</td><td>All classes, new student orientation</td></tr>
+          <tr><td>Mid-Term Exams (Term 1)</td><td>October 6–10, 2025</td><td>All classes</td></tr>
+          <tr><td>Term 1 End / Winter Break</td><td>December 19, 2025</td><td>Winter holidays begin</td></tr>
+          <tr><td>Term 2 Begins</td><td>January 12, 2026</td><td>Spring term</td></tr>
+          <tr><td>Cambridge Mock Exams</td><td>February 16–27, 2026</td><td>O-Level &amp; A-Level students</td></tr>
+          <tr><td>Annual Sports Day</td><td>March 14, 2026</td><td>All students</td></tr>
+          <tr><td>Term 2 End</td><td>April 3, 2026</td><td>Spring break</td></tr>
+          <tr><td>Term 3 Begins</td><td>April 20, 2026</td><td>Final term</td></tr>
+          <tr><td>Cambridge IGCSE / A-Level Exams</td><td>May – June, 2026</td><td>O-Level &amp; A-Level students</td></tr>
+          <tr><td>Annual Prize Giving Day</td><td>July 10, 2026</td><td>All students &amp; families</td></tr>
+          <tr><td>Session End</td><td>July 24, 2026</td><td>Summer break begins</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section"><div class="container"><h2>Ready to Enrol?</h2><p>Secure your child's place in our renowned academic programme today.</p><div class="cta-btns"><a href="admissions.html" class="btn btn-white btn-lg">Start Application</a><a href="contact.html" class="btn btn-outline-white btn-lg">Ask a Question</a></div></div></div>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo"><div class="nav-logo-icon">AB</div><div class="nav-logo-text"><strong>Al-Barr Secondary School</strong><span>Nurturing Minds, Building Futures</span></div></a><p>Quality O-Level &amp; A-Level education in Karachi since 2020.</p><div class="social-row"><a href="#" class="social-btn">fb</a><a href="#" class="social-btn">in</a><a href="#" class="social-btn">yt</a><a href="#" class="social-btn">wa</a></div></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><div class="contact-line"><span>📍</span><span>R-123, Sector-9, North Karachi</span></div><div class="contact-line"><span>📞</span><span>+92-334-1243456</span></div><div class="contact-line"><span>✉️</span><span>info@albarr.edu.pk</span></div></div><div class="footer-col footer-newsletter"><h4>Newsletter</h4><p>Stay updated with school news.</p><div class="nl-form"><input type="email" placeholder="Your email" /><button class="btn btn-secondary btn-sm">Join</button></div></div></div><div class="footer-bottom"><p>&copy; 2025 Al-Barr Secondary School. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

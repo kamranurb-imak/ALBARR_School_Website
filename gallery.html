@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Al-Barr Secondary School Photo Gallery — campus, events, sports, and labs." />
+  <title>Gallery | Al-Barr Secondary School</title>
+  <link rel="stylesheet" href="css/main.css" /><link rel="stylesheet" href="css/components.css" />
+  <style>
+    .gallery-body { padding:var(--space-16) 0; }
+    .gallery-filter { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px; }
+    .gf-btn { padding:8px 20px; border-radius:var(--radius-full); border:1.5px solid var(--color-border); background:var(--color-surface); color:var(--color-text-muted); font-size:var(--text-sm); font-weight:600; cursor:pointer; transition:all var(--transition); }
+    .gf-btn.active,.gf-btn:hover { background:var(--color-primary); color:#fff; border-color:var(--color-primary); }
+    .gallery-full { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .gallery-full .gallery-item { aspect-ratio:4/3; border-radius:var(--radius-lg); }
+    .gallery-item-info { padding:12px; }
+    .gallery-item-info span { font-size:var(--text-sm); font-weight:600; }
+  </style>
+</head>
+<body>
+  <nav class="navbar solid" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">AB</div><div class="nav-logo-text"><strong>Al-Barr Secondary School</strong><span>Nurturing Minds, Building Futures</span></div></a>
+      <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html" class="active">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <div class="nav-right"><button class="theme-toggle" id="themeToggle" title="Toggle Dark / Light Mode">🌙</button><a href="admissions.html" class="btn btn-secondary btn-sm">Apply Now</a></div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-drawer" id="navDrawer"><a href="index.html">Home</a><a href="about.html">About</a><a href="academics.html">Academics</a><a href="admissions.html">Admissions</a><a href="news.html">News</a><a href="gallery.html" class="active">Gallery</a><a href="contact.html">Contact</a><a href="admissions.html" class="btn btn-secondary">Apply Now</a></div>
+
+  <div class="page-hero"><div class="container"><h1>Photo Gallery</h1><p>A glimpse of life at Al-Barr Secondary School</p><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Gallery</span></div></div></div>
+
+  <div class="gallery-body">
+    <div class="container">
+      <div class="section-hdr fade-up"><div><div class="label">Campus Life</div><h2 class="section-title">Life at Al-Barr</h2></div></div>
+      <div class="gallery-filter fade-up">
+        <button class="gf-btn active" data-cat="all">All</button>
+        <button class="gf-btn" data-cat="campus">Campus</button>
+        <button class="gf-btn" data-cat="labs">Labs</button>
+        <button class="gf-btn" data-cat="sports">Sports</button>
+        <button class="gf-btn" data-cat="events">Events</button>
+      </div>
+      <div class="gallery-full fade-up" id="galleryGrid">
+        <div class="gallery-item" data-cat="campus" data-caption="Main School Building"><div class="ph" style="height:100%;"><div class="ph-icon">🏫</div><span>Main Campus</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="labs" data-caption="Physics Laboratory"><div class="ph" style="height:100%;"><div class="ph-icon">⚗️</div><span>Physics Lab</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="sports" data-caption="Annual Sports Day 2025"><div class="ph" style="height:100%;"><div class="ph-icon">🏃</div><span>Sports Day</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="labs" data-caption="Computer Laboratory"><div class="ph" style="height:100%;"><div class="ph-icon">💻</div><span>Computer Lab</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="events" data-caption="Annual Prize Giving Ceremony"><div class="ph" style="height:100%;"><div class="ph-icon">🏆</div><span>Prize Giving</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="campus" data-caption="School Library"><div class="ph" style="height:100%;"><div class="ph-icon">📚</div><span>Library</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="sports" data-caption="Cricket Tournament 2025"><div class="ph" style="height:100%;"><div class="ph-icon">🏏</div><span>Cricket</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="events" data-caption="Annual Art Exhibition"><div class="ph" style="height:100%;"><div class="ph-icon">🎨</div><span>Art Exhibition</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="labs" data-caption="Chemistry Laboratory"><div class="ph" style="height:100%;"><div class="ph-icon">🔬</div><span>Chemistry Lab</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="campus" data-caption="School Cafeteria"><div class="ph" style="height:100%;"><div class="ph-icon">🍽️</div><span>Cafeteria</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="events" data-caption="Science Fair Winners 2025"><div class="ph" style="height:100%;"><div class="ph-icon">🔭</div><span>Science Fair</span></div><div class="gallery-overlay">🔍</div></div>
+        <div class="gallery-item" data-cat="sports" data-caption="Basketball Court"><div class="ph" style="height:100%;"><div class="ph-icon">🏀</div><span>Basketball</span></div><div class="gallery-overlay">🔍</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <div class="lightbox-img ph" id="lbImg" style="min-height:360px;"><div class="ph-icon" id="lbIcon" style="font-size:4rem;">📷</div></div>
+      <div class="lightbox-caption" id="lbCaption">Photo</div>
+      <button class="lightbox-close" id="lbClose">✕</button>
+    </div>
+  </div>
+
+  <div class="cta-section"><div class="container"><h2>Want to See More?</h2><p>Come visit Al-Barr Secondary School in person and experience our campus for yourself.</p><div class="cta-btns"><a href="contact.html" class="btn btn-white btn-lg">Schedule a Visit</a><a href="admissions.html" class="btn btn-outline-white btn-lg">Apply Now</a></div></div></div>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo"><div class="nav-logo-icon">AB</div><div class="nav-logo-text"><strong>Al-Barr Secondary School</strong><span>Nurturing Minds, Building Futures</span></div></a><p>Quality O-Level &amp; A-Level education in Karachi since 2020.</p><div class="social-row"><a href="#" class="social-btn">fb</a><a href="#" class="social-btn">in</a><a href="#" class="social-btn">yt</a><a href="#" class="social-btn">wa</a></div></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><div class="contact-line"><span>📍</span><span>R-123, Sector-9, North Karachi</span></div><div class="contact-line"><span>📞</span><span>+92-334-1243456</span></div><div class="contact-line"><span>✉️</span><span>info@albarr.edu.pk</span></div></div><div class="footer-col footer-newsletter"><h4>Newsletter</h4><p>Stay updated with school news.</p><div class="nl-form"><input type="email" placeholder="Your email" /><button class="btn btn-secondary btn-sm">Join</button></div></div></div><div class="footer-bottom"><p>&copy; 2025 Al-Barr Secondary School. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div></footer>
+  <script src="js/main.js"></script><script src="js/gallery.js"></script>
+</body>
+</html>

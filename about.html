@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Al-Barr Secondary School — our history, mission, vision, and the team behind our students' success." />
+  <title>About Us | Al-Barr Secondary School</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .about-body { padding: var(--space-16) 0; }
+    .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; margin-bottom:var(--space-16); }
+    .story-img { height:380px; border-radius:var(--radius-xl); }
+    .story-content h2 { margin-bottom:20px; }
+    .story-content p { color:var(--color-text-muted); line-height:1.8; margin-bottom:14px; }
+    .mv-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin:var(--space-16) 0; }
+    .mv-card { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-xl); padding:40px; }
+    .mv-card .mv-icon { font-size:2.5rem; margin-bottom:16px; }
+    .mv-card h3 { font-size:var(--text-2xl); margin-bottom:14px; color:var(--color-primary); }
+    .mv-card p { color:var(--color-text-muted); line-height:1.75; }
+    .values-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:48px; }
+    .value-item { text-align:center; padding:36px 24px; background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-xl); transition:all var(--transition); }
+    .value-item:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--color-primary); }
+    .value-icon { font-size:2.4rem; margin-bottom:16px; }
+    .value-item h4 { font-size:var(--text-lg); margin-bottom:10px; }
+    .value-item p { font-size:var(--text-sm); color:var(--color-text-muted); }
+    .principal-full { display:grid; grid-template-columns:300px 1fr; gap:56px; align-items:start; background:var(--color-bg-alt); border-radius:var(--radius-xl); padding:48px; margin:var(--space-16) 0; }
+    .principal-full .ph { height:340px; border-radius:var(--radius-xl); }
+    .principal-full blockquote { font-family:var(--font-heading); font-size:var(--text-xl); font-style:italic; line-height:1.7; border-left:4px solid var(--color-secondary); padding-left:20px; margin:20px 0 28px; color:var(--color-text); }
+    .faculty-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:48px; }
+    @media(max-width:900px) { .story-grid,.mv-grid,.principal-full { grid-template-columns:1fr; } .values-grid,.faculty-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:480px) { .values-grid,.faculty-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar solid" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">AB</div>
+        <div class="nav-logo-text"><strong>Al-Barr Secondary School</strong><span>Nurturing Minds, Building Futures</span></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" title="Toggle Dark / Light Mode">🌙</button>
+        <a href="admissions.html" class="btn btn-secondary btn-sm">Apply Now</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="index.html">Home</a><a href="about.html" class="active">About</a><a href="academics.html">Academics</a>
+    <a href="admissions.html">Admissions</a><a href="news.html">News</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+    <a href="admissions.html" class="btn btn-secondary">Apply Now</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>About Al-Barr Secondary School</h1>
+      <p>Our story, our mission, and the people who make it all possible</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About</span></div>
+    </div>
+  </div>
+
+  <div class="about-body">
+    <div class="container">
+      <!-- History -->
+      <div class="story-grid">
+        <div class="ph story-img fade-up"><div class="ph-icon">🏫</div><span>Al-Barr Campus, 2020</span></div>
+        <div class="story-content fade-up">
+          <div class="label">Our History</div>
+          <h2 class="section-title">A School Born from a Vision</h2>
+          <p>Al-Barr Secondary School was founded in 2020 with a bold and clear vision: to bring world-class, Cambridge-aligned education to the families of North Karachi. In a neighbourhood underserved by quality educational institutions, our founders saw not a problem — but an opportunity.</p>
+          <p>Starting with a small cohort of 120 students and 12 dedicated teachers, the school quickly established a reputation for academic rigour, strong values, and genuine care for every student. By 2022, enrolment had grown to over 600, and results in the inaugural Cambridge O-Level session exceeded all expectations.</p>
+          <p>Today, Al-Barr serves over 850 students from Class I through A-Level, with a team of 45 qualified and passionate educators committed to making a lasting difference in every child's life.</p>
+        </div>
+      </div>
+
+      <!-- Mission & Vision -->
+      <div class="text-center fade-up"><div class="label">Our Purpose</div><h2 class="section-title">Mission &amp; Vision</h2></div>
+      <div class="mv-grid">
+        <div class="mv-card fade-up">
+          <div class="mv-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To provide every student with a challenging, inclusive, and values-driven education that develops academic excellence, critical thinking, and strong moral character — equipping them to lead purposeful and successful lives in a rapidly changing world.</p>
+        </div>
+        <div class="mv-card fade-up">
+          <div class="mv-icon">🌟</div>
+          <h3>Our Vision</h3>
+          <p>To be the leading secondary school in Karachi, recognised nationally for outstanding Cambridge results, holistic student development, and producing graduates who are confident, compassionate, and capable of making a positive impact on their communities and the world.</p>
+        </div>
+      </div>
+
+      <!-- Core Values -->
+      <div class="section-alt" style="border-radius:var(--radius-xl);padding:56px 48px;">
+        <div class="text-center fade-up"><div class="label">What We Stand For</div><h2 class="section-title">Our Core Values</h2></div>
+        <div class="values-grid">
+          <div class="value-item fade-up"><div class="value-icon">📖</div><h4>Academic Excellence</h4><p>We set the highest standards and support every student in reaching their full academic potential.</p></div>
+          <div class="value-item fade-up"><div class="value-icon">🤲</div><h4>Integrity &amp; Faith</h4><p>Honesty, respect, and strong moral grounding are the foundation of everything we do.</p></div>
+          <div class="value-item fade-up"><div class="value-icon">🌱</div><h4>Holistic Growth</h4><p>We nurture students intellectually, physically, socially, and spiritually — the whole child matters.</p></div>
+          <div class="value-item fade-up"><div class="value-icon">🌍</div><h4>Global Outlook</h4><p>We prepare students to thrive in a globalised world through the Cambridge International Curriculum.</p></div>
+        </div>
+      </div>
+
+      <!-- Principal's Message -->
+      <div id="principal" style="margin-top:var(--space-16);">
+        <div class="text-center fade-up"><div class="label">Leadership</div><h2 class="section-title">Principal's Message</h2></div>
+        <div class="principal-full fade-up">
+          <div class="ph"><div class="ph-icon" style="font-size:4rem;">👨‍💼</div><span>Muhammad Imran<br/>Principal</span></div>
+          <div>
+            <blockquote>"At Al-Barr Secondary School, we believe every child carries within them an extraordinary potential. Our role as educators is to create the environment where that potential is discovered, nurtured, and celebrated. We don't just prepare students for examinations — we prepare them for life.<br/><br/>Since our founding in 2020, I have witnessed hundreds of students arrive unsure of themselves and leave as confident, capable young people ready to take on the world. That transformation is the reward that keeps us all motivated every single day."</blockquote>
+            <strong style="font-size:var(--text-lg);">Muhammad Imran</strong>
+            <p style="color:var(--color-text-muted);font-size:var(--text-sm);margin-top:4px;">Principal, Al-Barr Secondary School · M.Ed, University of Karachi</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faculty -->
+      <div style="margin-top:var(--space-16);">
+        <div class="text-center fade-up"><div class="label">Meet Our Team</div><h2 class="section-title">Faculty Highlights</h2></div>
+        <div class="faculty-grid">
+          <div class="card teacher-card fade-up"><div class="teacher-avatar">👩‍🏫</div><h3>Ms. Nadia Hussain</h3><div class="subject">Mathematics &amp; Statistics</div><p>M.Sc. Mathematics · 12 years Cambridge teaching experience</p></div>
+          <div class="card teacher-card fade-up"><div class="teacher-avatar">👨‍🔬</div><h3>Mr. Bilal Ahmed</h3><div class="subject">Physics &amp; Chemistry</div><p>M.Sc. Physics · Cambridge Examiner · 9 years experience</p></div>
+          <div class="card teacher-card fade-up"><div class="teacher-avatar">👩‍💻</div><h3>Ms. Sara Qureshi</h3><div class="subject">Computer Science</div><p>MS Computer Science · Certified Cambridge IT Teacher</p></div>
+          <div class="card teacher-card fade-up"><div class="teacher-avatar">👨‍🎓</div><h3>Mr. Tariq Mehmood</h3><div class="subject">English Language &amp; Literature</div><p>MA English · IELTS Instructor · 15 years experience</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section"><div class="container"><h2>Want to Learn More?</h2><p>Visit our campus, meet our team, and see what makes Al-Barr truly special.</p><div class="cta-btns"><a href="contact.html" class="btn btn-white btn-lg">Schedule a Visit</a><a href="admissions.html" class="btn btn-outline-white btn-lg">Apply Now</a></div></div></div>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo"><div class="nav-logo-icon">AB</div><div class="nav-logo-text"><strong>Al-Barr Secondary School</strong><span>Nurturing Minds, Building Futures</span></div></a><p>Providing quality O-Level &amp; A-Level education in Karachi since 2020.</p><div class="social-row"><a href="#" class="social-btn">fb</a><a href="#" class="social-btn">in</a><a href="#" class="social-btn">yt</a><a href="#" class="social-btn">wa</a></div></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><div class="contact-line"><span>📍</span><span>R-123, Sector-9, Power House, North Karachi</span></div><div class="contact-line"><span>📞</span><span>+92-334-1243456</span></div><div class="contact-line"><span>✉️</span><span>info@albarr.edu.pk</span></div></div><div class="footer-col footer-newsletter"><h4>Newsletter</h4><p>Stay updated with school news and events.</p><div class="nl-form"><input type="email" placeholder="Your email" /><button class="btn btn-secondary btn-sm">Join</button></div></div></div><div class="footer-bottom"><p>&copy; 2025 Al-Barr Secondary School. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
