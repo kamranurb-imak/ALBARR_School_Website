@@ -57,13 +57,14 @@
   </div>
 
   <!-- ══════════════════════════════════════════
-       HERO
+       HERO — Interactive Shader Wallpaper
   ══════════════════════════════════════════ -->
   <section class="hero-section" id="home">
-    <div class="hero-bg">
-      <div class="hero-overlay"></div>
-      <div class="hero-pattern"></div>
-    </div>
+
+    <!-- WebGL canvas fills the entire hero -->
+    <canvas id="shaderCanvas" aria-hidden="true"></canvas>
+
+    <!-- Hero content on top of shader -->
     <div class="container hero-container">
       <div class="hero-content">
         <div class="hero-badge">
@@ -84,6 +85,8 @@
           <a href="about.html" class="btn btn-outline-white btn-lg">Discover More</a>
         </div>
       </div>
+
+      <!-- Right column: info card + shader picker stacked vertically -->
       <div class="hero-card-col">
         <div class="hero-info-card">
           <div class="info-card-row">
@@ -108,6 +111,19 @@
             </div>
           </div>
           <a href="admissions.html" class="btn btn-primary btn-full" style="margin-top:16px;">Schedule a Visit</a>
+        </div>
+
+        <!-- Shader picker sits directly below the info card, same width -->
+        <div class="shader-picker" id="shaderPicker">
+          <div class="shader-picker-label">🎨 Choose Wallpaper</div>
+          <div class="shader-picker-btns">
+            <button class="shader-btn" data-shader="0" title="Ocean Depth">🌊<span>Ocean</span></button>
+            <button class="shader-btn" data-shader="1" title="Aurora Waves">🌌<span>Aurora</span></button>
+            <button class="shader-btn" data-shader="2" title="Lava Vortex">🔥<span>Lava</span></button>
+            <button class="shader-btn" data-shader="3" title="Cyber Grid">🤖<span>Cyber</span></button>
+            <button class="shader-btn" data-shader="4" title="Galaxy Dust">✨<span>Galaxy</span></button>
+          </div>
+          <div class="shader-hint">Move mouse · Click anywhere to burst</div>
         </div>
       </div>
     </div>
@@ -518,5 +534,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/gallery.js"></script>
+  <script src="js/shaders.js"></script>
 </body>
 </html>

@@ -1,5 +1,116 @@
 /* ── HOME PAGE STYLES ── */
 
+/* ══════════════════════════════════════
+   SHADER CANVAS
+══════════════════════════════════════ */
+#shaderCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+/* Subtle dark gradient so text stays readable over any shader */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,0,0,.35) 0%, transparent 70%),
+    linear-gradient(to right, rgba(0,0,0,.5) 0%, rgba(0,0,0,.05) 60%, transparent 100%);
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════
+   SHADER PICKER
+   — sits inside .hero-card-col, below the info card
+══════════════════════════════════════ */
+.shader-picker {
+  /* no absolute positioning — flows naturally below info card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: all;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.shader-picker-label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+}
+
+.shader-picker-btns {
+  display: flex;
+  gap: 6px;
+  background: rgba(0,0,0,.38);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 60px;
+  padding: 6px 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.shader-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: none;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  padding: 6px 11px;
+  cursor: pointer;
+  color: rgba(255,255,255,.6);
+  font-size: .75rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  transition: all .2s ease;
+  line-height: 1;
+  flex: 1;
+}
+.shader-btn:hover {
+  color: #fff;
+  background: rgba(255,255,255,.1);
+  transform: translateY(-2px);
+}
+.shader-btn span { font-size: .6rem; white-space: nowrap; }
+.shader-btn:hover,
+.shader-btn.shader-active { transform: translateY(-2px); }
+
+.shader-btn.shader-active {
+  color: #fff;
+  background: rgba(245,166,35,.22);
+  border-color: rgba(245,166,35,.6);
+}
+
+@keyframes shaderPulse {
+  0%   { transform: scale(1) translateY(-2px); }
+  40%  { transform: scale(1.15) translateY(-2px); }
+  100% { transform: scale(1) translateY(-2px); }
+}
+.shader-btn.shader-pulse { animation: shaderPulse .35s ease; }
+
+.shader-hint {
+  font-size: .6rem;
+  color: rgba(255,255,255,.3);
+  letter-spacing: .05em;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════
+   HERO CONTENT — sits above canvas
+══════════════════════════════════════ */
+
 /* Hero */
 .hero-section {
   min-height: 100vh;
@@ -11,6 +122,7 @@
 .hero-bg {
   position: absolute;
   inset: 0;
+  display: none; /* hidden — canvas replaces */
 }
 .hero-overlay {
   position: absolute;
@@ -32,6 +144,7 @@
 }
 .hero-container {
   position: relative;
+  z-index: 5;
   display: grid;
   grid-template-columns: 1fr 420px;
   gap: 64px;
@@ -84,11 +197,13 @@
 
 /* Info card */
 .hero-info-card {
-  background: rgba(255,255,255,.06);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(10, 18, 40, .55);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid rgba(255,255,255,.18);
   border-radius: var(--radius-xl);
   padding: 32px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.1);
 }
 .info-card-row {
   display: flex;
@@ -124,6 +239,7 @@
   font-size: .7rem;
   letter-spacing: .1em;
   text-transform: uppercase;
+  z-index: 5;
 }
 .scroll-bar {
   width: 1px; height: 36px;
