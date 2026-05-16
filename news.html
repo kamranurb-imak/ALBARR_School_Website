@@ -1,47 +1,181 @@
 ﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="AL-BARR SCHOOLING SYSTEM News, Events, and Announcements." />
   <title>News &amp; Events | AL-BARR SCHOOLING SYSTEM</title>
-  <link rel="stylesheet" href="css/main.css" /><link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
   <style>
-    .news-body { padding:var(--space-16) 0; }
-    .filter-bar { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px; }
-    .filter-btn { padding:8px 20px; border-radius:var(--radius-full); border:1.5px solid var(--color-border); background:var(--color-surface); color:var(--color-text-muted); font-size:var(--text-sm); font-weight:600; cursor:pointer; transition:all var(--transition); }
-    .filter-btn.active, .filter-btn:hover { background:var(--color-primary); color:#fff; border-color:var(--color-primary); }
-    .news-full-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
-    .events-list-section { margin-top:var(--space-16); }
-    .event-row { display:flex; align-items:center; gap:24px; background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:24px; margin-bottom:16px; transition:all var(--transition); }
-    .event-row:hover { box-shadow:var(--shadow-md); transform:translateX(4px); border-color:var(--color-primary); }
-    .ev-date { text-align:center; background:var(--color-primary); color:#fff; border-radius:var(--radius-md); padding:12px 16px; min-width:64px; flex-shrink:0; }
-    .ev-date strong { display:block; font-family:var(--font-heading); font-size:var(--text-2xl); line-height:1; }
-    .ev-date span { font-size:var(--text-xs); text-transform:uppercase; letter-spacing:.06em; opacity:.8; }
-    .ev-info { flex:1; }
-    .ev-info h3 { font-size:var(--text-lg); margin-bottom:4px; }
-    .ev-info p { font-size:var(--text-sm); color:var(--color-text-muted); }
-    .ev-meta { display:flex; flex-direction:column; align-items:flex-end; gap:6px; flex-shrink:0; }
-    @media(max-width:900px){ .news-full-grid { grid-template-columns:1fr 1fr; } }
-    @media(max-width:600px){ .news-full-grid { grid-template-columns:1fr; } .event-row { flex-wrap:wrap; } }
+    .news-body {
+      padding: var(--space-16) 0;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .news-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .events-list-section {
+      margin-top: var(--space-16);
+    }
+
+    .event-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 16px;
+      transition: all var(--transition);
+    }
+
+    .event-row:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateX(4px);
+      border-color: var(--color-primary);
+    }
+
+    .ev-date {
+      text-align: center;
+      background: var(--color-primary);
+      color: #fff;
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      min-width: 64px;
+      flex-shrink: 0;
+    }
+
+    .ev-date strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      line-height: 1;
+    }
+
+    .ev-date span {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      opacity: .8;
+    }
+
+    .ev-info {
+      flex: 1;
+    }
+
+    .ev-info h3 {
+      font-size: var(--text-lg);
+      margin-bottom: 4px;
+    }
+
+    .ev-info p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    .ev-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    @media(max-width:900px) {
+      .news-full-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:600px) {
+      .news-full-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-row {
+        flex-wrap: wrap;
+      }
+    }
   </style>
 </head>
+
 <body>
   <nav class="navbar solid" id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><img src="assets/logo.png" alt="AL-BARR SCHOOLING SYSTEM Logo"></div><div class="nav-logo-text"><strong>AL-BARR SCHOOLING SYSTEM</strong><span>Nurturing Minds, Building Futures</span></div></a>
-      <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="news.html" class="active">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
-      <div class="nav-right"><button class="theme-toggle" id="themeToggle" title="Toggle Dark / Light Mode">🌙</button><a href="admissions.html" class="btn btn-secondary btn-sm">Apply Now</a></div>
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="/assets/images/logo.jpg" alt="AL-BARR SCHOOLING SYSTEM Logo"></div>
+        <div class="nav-logo-text"><strong>AL-BARR SCHOOLING SYSTEM</strong><span>Nurturing Minds, Building
+            Futures</span></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="news.html" class="active">News</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right"><button class="theme-toggle" id="themeToggle"
+          title="Toggle Dark / Light Mode">🌙</button><a href="admissions.html" class="btn btn-secondary btn-sm">Apply
+          Now</a></div>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </nav>
-  <div class="nav-drawer" id="navDrawer"><a href="index.html">Home</a><a href="about.html">About</a><a href="academics.html">Academics</a><a href="admissions.html">Admissions</a><a href="news.html" class="active">News</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="admissions.html" class="btn btn-secondary">Apply Now</a></div>
+  <div class="nav-drawer" id="navDrawer"><a href="index.html">Home</a><a href="about.html">About</a><a
+      href="academics.html">Academics</a><a href="admissions.html">Admissions</a><a href="news.html"
+      class="active">News</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a
+      href="admissions.html" class="btn btn-secondary">Apply Now</a></div>
 
-  <div class="page-hero"><div class="container"><h1>News &amp; Events</h1><p>Announcements, achievements, and upcoming events at Al-Barr</p><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>News &amp; Events</span></div></div></div>
+  <div class="page-hero">
+    <div class="container">
+      <h1>News &amp; Events</h1>
+      <p>Announcements, achievements, and upcoming events at Al-Barr</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>News &amp; Events</span></div>
+    </div>
+  </div>
 
   <div class="news-body">
     <div class="container">
       <!-- Latest News -->
-      <div class="section-hdr fade-up"><div><div class="label">Latest Updates</div><h2 class="section-title">News &amp; Announcements</h2></div></div>
+      <div class="section-hdr fade-up">
+        <div>
+          <div class="label">Latest Updates</div>
+          <h2 class="section-title">News &amp; Announcements</h2>
+        </div>
+      </div>
       <div class="filter-bar fade-up">
         <button class="filter-btn active">All</button>
         <button class="filter-btn">Announcements</button>
@@ -49,28 +183,188 @@
         <button class="filter-btn">Events</button>
       </div>
       <div class="news-full-grid">
-        <div class="card news-card fade-up"><div class="news-card-img"><div class="ph" style="height:200px;"><div class="ph-icon">📢</div><span>Admissions Open</span></div></div><div class="news-card-body"><div class="news-card-meta"><span class="badge badge-gold">Announcement</span><span class="news-card-date">May 1, 2025</span></div><h3>Admissions Open for Session 2025–26</h3><p>Applications are being accepted for all classes from Primary I to A-Level. Seats are limited — apply early to avoid disappointment.</p><a href="admissions.html" class="news-card-link">Apply Now →</a></div></div>
-        <div class="card news-card fade-up"><div class="news-card-img"><div class="ph" style="height:200px;"><div class="ph-icon">🏆</div><span>Board Results</span></div></div><div class="news-card-body"><div class="news-card-meta"><span class="badge badge-navy">Achievement</span><span class="news-card-date">Apr 18, 2025</span></div><h3>Outstanding O-Level Results — 94% Pass Rate</h3><p>The Class of 2024 achieved a 94% pass rate in Cambridge O-Level examinations, with 38 students earning straight A* grades across all subjects.</p><a href="#" class="news-card-link">Read More →</a></div></div>
-        <div class="card news-card fade-up"><div class="news-card-img"><div class="ph" style="height:200px;"><div class="ph-icon">🎉</div><span>Sports Day 2025</span></div></div><div class="news-card-body"><div class="news-card-meta"><span class="badge badge-sky">Event</span><span class="news-card-date">Mar 30, 2025</span></div><h3>Annual Sports Day 2025 — A Day of Champions</h3><p>Students competed in track, field, cricket, basketball, and tug-of-war events. The Red House claimed the overall championship for the second consecutive year.</p><a href="#" class="news-card-link">Read More →</a></div></div>
-        <div class="card news-card fade-up"><div class="news-card-img"><div class="ph" style="height:200px;"><div class="ph-icon">🎨</div><span>Art Exhibition</span></div></div><div class="news-card-body"><div class="news-card-meta"><span class="badge badge-sky">Event</span><span class="news-card-date">Mar 10, 2025</span></div><h3>Annual Art Exhibition — "Our Karachi" Theme</h3><p>Students from Class IV to A-Level showcased their artwork inspired by the streets, people, and culture of Karachi. Over 200 pieces were displayed in our main hall.</p><a href="#" class="news-card-link">Read More →</a></div></div>
-        <div class="card news-card fade-up"><div class="news-card-img"><div class="ph" style="height:200px;"><div class="ph-icon">🔬</div><span>Science Fair</span></div></div><div class="news-card-body"><div class="news-card-meta"><span class="badge badge-navy">Achievement</span><span class="news-card-date">Feb 22, 2025</span></div><h3>Al-Barr Students Win Inter-School Science Fair</h3><p>A team of five O-Level students won first place at the Karachi Regional Science Fair for their innovative water purification project using locally-sourced materials.</p><a href="#" class="news-card-link">Read More →</a></div></div>
-        <div class="card news-card fade-up"><div class="news-card-img"><div class="ph" style="height:200px;"><div class="ph-icon">📝</div><span>Mock Exams</span></div></div><div class="news-card-body"><div class="news-card-meta"><span class="badge badge-gold">Announcement</span><span class="news-card-date">Feb 3, 2025</span></div><h3>Cambridge Mock Examinations Schedule Released</h3><p>The schedule for O-Level and A-Level mock examinations has been published. Students are encouraged to review the timetable and begin intensive preparation immediately.</p><a href="#" class="news-card-link">Read More →</a></div></div>
+        <div class="card news-card fade-up">
+          <div class="news-card-img">
+            <div class="ph" style="height:200px;">
+              <div class="ph-icon">📢</div><span>Admissions Open</span>
+            </div>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-meta"><span class="badge badge-gold">Announcement</span><span
+                class="news-card-date">May 1, 2025</span></div>
+            <h3>Admissions Open for Session 2025–26</h3>
+            <p>Applications are being accepted for all classes from Primary I to A-Level. Seats are limited — apply
+              early to avoid disappointment.</p><a href="admissions.html" class="news-card-link">Apply Now →</a>
+          </div>
+        </div>
+        <div class="card news-card fade-up">
+          <div class="news-card-img">
+            <div class="ph" style="height:200px;">
+              <div class="ph-icon">🏆</div><span>Board Results</span>
+            </div>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-meta"><span class="badge badge-navy">Achievement</span><span
+                class="news-card-date">Apr 18, 2025</span></div>
+            <h3>Outstanding O-Level Results — 94% Pass Rate</h3>
+            <p>The Class of 2024 achieved a 94% pass rate in Cambridge O-Level examinations, with 38 students earning
+              straight A* grades across all subjects.</p><a href="#" class="news-card-link">Read More →</a>
+          </div>
+        </div>
+        <div class="card news-card fade-up">
+          <div class="news-card-img">
+            <div class="ph" style="height:200px;">
+              <div class="ph-icon">🎉</div><span>Sports Day 2025</span>
+            </div>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-meta"><span class="badge badge-sky">Event</span><span class="news-card-date">Mar 30,
+                2025</span></div>
+            <h3>Annual Sports Day 2025 — A Day of Champions</h3>
+            <p>Students competed in track, field, cricket, basketball, and tug-of-war events. The Red House claimed the
+              overall championship for the second consecutive year.</p><a href="#" class="news-card-link">Read More
+              →</a>
+          </div>
+        </div>
+        <div class="card news-card fade-up">
+          <div class="news-card-img">
+            <div class="ph" style="height:200px;">
+              <div class="ph-icon">🎨</div><span>Art Exhibition</span>
+            </div>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-meta"><span class="badge badge-sky">Event</span><span class="news-card-date">Mar 10,
+                2025</span></div>
+            <h3>Annual Art Exhibition — "Our Karachi" Theme</h3>
+            <p>Students from Class IV to A-Level showcased their artwork inspired by the streets, people, and culture of
+              Karachi. Over 200 pieces were displayed in our main hall.</p><a href="#" class="news-card-link">Read More
+              →</a>
+          </div>
+        </div>
+        <div class="card news-card fade-up">
+          <div class="news-card-img">
+            <div class="ph" style="height:200px;">
+              <div class="ph-icon">🔬</div><span>Science Fair</span>
+            </div>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-meta"><span class="badge badge-navy">Achievement</span><span
+                class="news-card-date">Feb 22, 2025</span></div>
+            <h3>Al-Barr Students Win Inter-School Science Fair</h3>
+            <p>A team of five O-Level students won first place at the Karachi Regional Science Fair for their innovative
+              water purification project using locally-sourced materials.</p><a href="#" class="news-card-link">Read
+              More →</a>
+          </div>
+        </div>
+        <div class="card news-card fade-up">
+          <div class="news-card-img">
+            <div class="ph" style="height:200px;">
+              <div class="ph-icon">📝</div><span>Mock Exams</span>
+            </div>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-meta"><span class="badge badge-gold">Announcement</span><span
+                class="news-card-date">Feb 3, 2025</span></div>
+            <h3>Cambridge Mock Examinations Schedule Released</h3>
+            <p>The schedule for O-Level and A-Level mock examinations has been published. Students are encouraged to
+              review the timetable and begin intensive preparation immediately.</p><a href="#"
+              class="news-card-link">Read More →</a>
+          </div>
+        </div>
       </div>
 
       <!-- Events -->
       <div class="events-list-section fade-up">
         <div class="label">Upcoming</div>
         <h2 class="section-title">Events Calendar</h2>
-        <div class="event-row fade-up"><div class="ev-date"><strong>15</strong><span>Jun</span></div><div class="ev-info"><h3>Open Day 2025</h3><p>Tour the campus, meet our teachers, and learn about programmes and admissions for 2025–26.</p></div><div class="ev-meta"><span class="badge badge-navy">Open Day</span><span style="font-size:var(--text-xs);color:var(--color-text-muted);">9:00 AM – 1:00 PM</span></div><a href="admissions.html" class="btn btn-sm btn-outline">Register</a></div>
-        <div class="event-row fade-up"><div class="ev-date"><strong>28</strong><span>Jun</span></div><div class="ev-info"><h3>Annual Science Fair 2025</h3><p>Class V–XII students present science and engineering projects. Parents and community members are welcome.</p></div><div class="ev-meta"><span class="badge badge-sky">Academic</span><span style="font-size:var(--text-xs);color:var(--color-text-muted);">10:00 AM – 4:00 PM</span></div><a href="contact.html" class="btn btn-sm btn-outline">Register</a></div>
-        <div class="event-row fade-up"><div class="ev-date"><strong>10</strong><span>Jul</span></div><div class="ev-info"><h3>Annual Prize Giving Day 2025</h3><p>Celebrating academic excellence, leadership, and achievements of the Class of 2025. All parents are invited.</p></div><div class="ev-meta"><span class="badge badge-gold">Ceremony</span><span style="font-size:var(--text-xs);color:var(--color-text-muted);">3:00 PM – 6:00 PM</span></div><a href="contact.html" class="btn btn-sm btn-outline">Register</a></div>
+        <div class="event-row fade-up">
+          <div class="ev-date"><strong>15</strong><span>Jun</span></div>
+          <div class="ev-info">
+            <h3>Open Day 2025</h3>
+            <p>Tour the campus, meet our teachers, and learn about programmes and admissions for 2025–26.</p>
+          </div>
+          <div class="ev-meta"><span class="badge badge-navy">Open Day</span><span
+              style="font-size:var(--text-xs);color:var(--color-text-muted);">9:00 AM – 1:00 PM</span></div><a
+            href="admissions.html" class="btn btn-sm btn-outline">Register</a>
+        </div>
+        <div class="event-row fade-up">
+          <div class="ev-date"><strong>28</strong><span>Jun</span></div>
+          <div class="ev-info">
+            <h3>Annual Science Fair 2025</h3>
+            <p>Class V–XII students present science and engineering projects. Parents and community members are welcome.
+            </p>
+          </div>
+          <div class="ev-meta"><span class="badge badge-sky">Academic</span><span
+              style="font-size:var(--text-xs);color:var(--color-text-muted);">10:00 AM – 4:00 PM</span></div><a
+            href="contact.html" class="btn btn-sm btn-outline">Register</a>
+        </div>
+        <div class="event-row fade-up">
+          <div class="ev-date"><strong>10</strong><span>Jul</span></div>
+          <div class="ev-info">
+            <h3>Annual Prize Giving Day 2025</h3>
+            <p>Celebrating academic excellence, leadership, and achievements of the Class of 2025. All parents are
+              invited.</p>
+          </div>
+          <div class="ev-meta"><span class="badge badge-gold">Ceremony</span><span
+              style="font-size:var(--text-xs);color:var(--color-text-muted);">3:00 PM – 6:00 PM</span></div><a
+            href="contact.html" class="btn btn-sm btn-outline">Register</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="cta-section"><div class="container"><h2>Don't Miss What's Happening</h2><p>Subscribe to our newsletter to receive school news directly in your inbox.</p><div class="cta-btns"><a href="contact.html" class="btn btn-white btn-lg">Contact Us</a><a href="admissions.html" class="btn btn-outline-white btn-lg">Apply Now</a></div></div></div>
+  <div class="cta-section">
+    <div class="container">
+      <h2>Don't Miss What's Happening</h2>
+      <p>Subscribe to our newsletter to receive school news directly in your inbox.</p>
+      <div class="cta-btns"><a href="contact.html" class="btn btn-white btn-lg">Contact Us</a><a href="admissions.html"
+          class="btn btn-outline-white btn-lg">Apply Now</a></div>
+    </div>
+  </div>
 
-  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo"><div class="nav-logo-icon"><img src="assets/logo.png" alt="AL-BARR SCHOOLING SYSTEM Logo"></div><div class="nav-logo-text"><strong>AL-BARR SCHOOLING SYSTEM</strong><span>Nurturing Minds, Building Futures</span></div></a><p>Quality O-Level &amp; A-Level education in Karachi since 2020.</p><div class="social-row"><a href="#" class="social-btn">fb</a><a href="#" class="social-btn">in</a><a href="#" class="social-btn">yt</a><a href="#" class="social-btn">wa</a></div></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><div class="contact-line"><span>📍</span><span>R-123, Sector-9, North Karachi</span></div><div class="contact-line"><span>📞</span><span>+92-334-1243456</span></div><div class="contact-line"><span>✉️</span><span>info@albarr.edu.pk</span></div></div><div class="footer-col footer-newsletter"><h4>Newsletter</h4><p>Stay updated with school news.</p><div class="nl-form"><input type="email" placeholder="Your email" /><button class="btn btn-secondary btn-sm">Join</button></div></div></div><div class="footer-bottom"><p>&copy; 2025 AL-BARR SCHOOLING SYSTEM. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div></footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"><img src="/assets/images/logo.jpg" alt="AL-BARR SCHOOLING SYSTEM Logo"></div>
+            <div class="nav-logo-text"><strong>AL-BARR SCHOOLING SYSTEM</strong><span>Nurturing Minds, Building
+                Futures</span></div>
+          </a>
+          <p>Quality O-Level &amp; A-Level education in Karachi since 2020.</p>
+          <div class="social-row"><a href="#" class="social-btn">fb</a><a href="#" class="social-btn">in</a><a href="#"
+              class="social-btn">yt</a><a href="#" class="social-btn">wa</a></div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="contact-line"><span>📍</span><span>R-123, Sector-9, North Karachi</span></div>
+          <div class="contact-line"><span>📞</span><span>+92-334-1243456</span></div>
+          <div class="contact-line"><span>✉️</span><span>info@albarr.edu.pk</span></div>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Stay updated with school news.</p>
+          <div class="nl-form"><input type="email" placeholder="Your email" /><button
+              class="btn btn-secondary btn-sm">Join</button></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AL-BARR SCHOOLING SYSTEM. All rights reserved.</p>
+        <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
   <script src="js/main.js"></script>
   <script>
     document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -81,4 +375,5 @@
     });
   </script>
 </body>
+
 </html>
