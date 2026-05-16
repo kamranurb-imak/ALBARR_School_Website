@@ -268,6 +268,32 @@ const SHADERS = [
     `
   },
   {
+    name: "Serene Blue",
+    emoji: "🔵",
+    description: "Calm, uniform deep-blue — clean and distraction-free",
+    frag: `
+      precision mediump float;
+      uniform vec2  u_res;
+      uniform float u_time;
+
+      void main() {
+        vec2 uv = gl_FragCoord.xy / u_res;
+
+        // Subtle top-to-bottom gradient within the same hue family
+        vec3 top    = vec3(0.08, 0.18, 0.38);   // deep navy
+        vec3 bottom = vec3(0.05, 0.12, 0.28);   // slightly darker navy
+
+        vec3 col = mix(bottom, top, uv.y);
+
+        // Very faint breathing pulse — barely perceptible, adds life without distraction
+        float pulse = sin(u_time * 0.4) * 0.012 + 0.012;
+        col += vec3(0.10, 0.20, 0.40) * pulse;
+
+        gl_FragColor = vec4(col, 1.0);
+      }
+    `
+  },
+  {
     name: "Galaxy Dust",
     emoji: "✨",
     description: "Stardust spirals around your cursor",
