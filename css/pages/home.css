@@ -12,15 +12,41 @@
   z-index: 0;
 }
 
+/* ══════════════════════════════════════
+   HERO PHOTO OVERLAY LAYER
+   Sits between shader (z:0) and text (z:2)
+══════════════════════════════════════ */
+.hero-photos {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+  /* Blend the photo with the shader beneath */
+  mix-blend-mode: luminosity;
+}
+
+.hero-photo.active {
+  opacity: 0.28;
+}
+
 /* Subtle dark gradient so text stays readable over any shader */
 .hero-section::after {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   background:
-    radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,0,0,.35) 0%, transparent 70%),
-    linear-gradient(to right, rgba(0,0,0,.5) 0%, rgba(0,0,0,.05) 60%, transparent 100%);
+    radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,0,0,.40) 0%, transparent 70%),
+    linear-gradient(to right, rgba(0,0,0,.55) 0%, rgba(0,0,0,.10) 60%, transparent 100%);
   pointer-events: none;
 }
 

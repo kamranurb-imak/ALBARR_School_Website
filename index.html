@@ -69,6 +69,22 @@
     <!-- WebGL canvas fills the entire hero -->
     <canvas id="shaderCanvas" aria-hidden="true"></canvas>
 
+    <!-- School photo overlays — one per shader, switched by JS -->
+    <div class="hero-photos" aria-hidden="true">
+      <!-- 0: Ocean — children in classroom, bright learning atmosphere -->
+      <div class="hero-photo active" data-photo="0" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&q=80&auto=format&fit=crop')"></div>
+      <!-- 1: Aurora — students outdoors, evening light -->
+      <div class="hero-photo" data-photo="1" style="background-image:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80&auto=format&fit=crop')"></div>
+      <!-- 2: Lava — energetic sports/activity on school ground -->
+      <div class="hero-photo" data-photo="2" style="background-image:url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=1600&q=80&auto=format&fit=crop')"></div>
+      <!-- 3: Cyber — students at computers / science lab -->
+      <div class="hero-photo" data-photo="3" style="background-image:url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1600&q=80&auto=format&fit=crop')"></div>
+      <!-- 4: Serene Blue — calm library / reading scene -->
+      <div class="hero-photo" data-photo="4" style="background-image:url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1600&q=80&auto=format&fit=crop')"></div>
+      <!-- 5: Galaxy — graduation / achievement celebration -->
+      <div class="hero-photo" data-photo="5" style="background-image:url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&q=80&auto=format&fit=crop')"></div>
+    </div>
+
     <!-- Hero content on top of shader -->
     <div class="container hero-container">
       <div class="hero-content">

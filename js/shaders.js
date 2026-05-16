@@ -516,6 +516,13 @@ function mountShaderWallpaper() {
 
   const wallpaper = new ShaderWallpaper(canvas);
 
+  // Switch hero photo to match shader index
+  function switchHeroPhoto(idx) {
+    document.querySelectorAll('.hero-photo').forEach(p => p.classList.remove('active'));
+    const target = document.querySelector(`.hero-photo[data-photo="${idx}"]`);
+    if (target) target.classList.add('active');
+  }
+
   // Wire up picker buttons
   document.querySelectorAll('[data-shader]').forEach(btn => {
     btn.addEventListener('click', e => {
@@ -524,6 +531,7 @@ function mountShaderWallpaper() {
       wallpaper.switchTo(idx);
       document.querySelectorAll('[data-shader]').forEach(b => b.classList.remove('shader-active'));
       btn.classList.add('shader-active');
+      switchHeroPhoto(idx);
 
       // Ripple feedback
       btn.classList.add('shader-pulse');
@@ -531,9 +539,10 @@ function mountShaderWallpaper() {
     });
   });
 
-  // Activate first button
+  // Activate first button and photo
   const first = document.querySelector('[data-shader="0"]');
   if (first) first.classList.add('shader-active');
+  switchHeroPhoto(0);
 
   return wallpaper;
 }
