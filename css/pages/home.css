@@ -1,6 +1,104 @@
 /* ── HOME PAGE STYLES ── */
 
 /* ══════════════════════════════════════
+   ANNOUNCEMENT TICKER
+   Sits above the navbar (rendered before it in HTML)
+══════════════════════════════════════ */
+.announcement-ticker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100; /* above navbar (z:1000) */
+  height: 36px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(27,58,107,.92) 0%, rgba(10,24,60,.92) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(245,166,35,.35);
+  overflow: hidden;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  transition: background .4s ease, border-color .4s ease;
+}
+
+/* Adapt label + track colours per wallpaper accent */
+[data-shader="1"] .announcement-ticker,
+[data-shader="4"] .announcement-ticker {
+  background: linear-gradient(90deg, rgba(10,30,70,.92) 0%, rgba(5,18,55,.92) 100%);
+}
+[data-shader="2"] .announcement-ticker {
+  background: linear-gradient(90deg, rgba(100,15,10,.92) 0%, rgba(60,8,5,.92) 100%);
+  border-bottom-color: rgba(255,120,60,.4);
+}
+[data-shader="3"] .announcement-ticker {
+  background: linear-gradient(90deg, rgba(5,28,15,.92) 0%, rgba(0,18,10,.92) 100%);
+  border-bottom-color: rgba(0,200,100,.35);
+}
+
+.ticker-label {
+  flex-shrink: 0;
+  padding: 0 14px 0 16px;
+  color: #F5A623;
+  font-weight: 700;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  white-space: nowrap;
+  border-right: 1px solid rgba(245,166,35,.4);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: rgba(245,166,35,.1);
+}
+
+.ticker-track-wrap {
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+  animation: tickerScroll 60s linear infinite;
+  will-change: transform;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  color: rgba(255,255,255,.88);
+  padding: 0 28px;
+}
+.ticker-sep {
+  color: rgba(245,166,35,.6);
+  font-size: .55rem;
+}
+
+/* Push navbar down by ticker height (home page only, via JS class on body) */
+body.has-ticker .navbar {
+  top: 36px;
+}
+body.has-ticker .hero-container {
+  padding-top: 166px; /* 130 + 36 ticker */
+}
+
+/* Dark theme variant */
+[data-theme="dark"] .announcement-ticker {
+  background: linear-gradient(90deg, rgba(8,16,36,.95) 0%, rgba(5,10,28,.95) 100%);
+}
+
+/* ══════════════════════════════════════
    SHADER CANVAS
 ══════════════════════════════════════ */
 #shaderCanvas {
